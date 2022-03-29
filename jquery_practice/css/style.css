@@ -1,0 +1,109 @@
+/*********************************************
+
+Here is a description of any special CSS used.
+In this case it's just padding and margin to 0
+and then centring the canvas (and anything else)
+using the CSS Grid.
+
+Also hides overflow.
+
+**********************************************/
+
+body {
+  padding: 0;
+  margin: 0;
+  display: grid; /* Set up the grid and justify/align to center */
+  justify-content: center;
+  align-content: center;
+
+}
+
+/* Navigation */
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #607d8b;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {float: none;}
+}
+
+
+/* Prison */
+
+#prison {
+  width: 20vw;
+  height: 20vw;
+
+  border: 5px dashed black;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+#prisoner {
+  font-size: 1.5rem;
+}
+
+
+/* Prison 2 */
+
+#prison_2 {
+  width: 20vw;
+  height: 20vw;
+
+  border: 5px dashed black;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+#prisoner_2 {
+  font-size: 1.5rem;
+  color: #2196f3;
+}
+
+/* Escape tunnel */
+#escape-tunnel {
+
+font-size: 0.7em;
+
+width: 5vw;
+height: 5vw;
+
+border: 2px dashed black;
+border-radius: 100%;
+
+display: grid;
+justify-content: center;
+align-content: center;
+
+}
+
+.prisoner-dragging {
+  color: #4444ff;
+  text-decoration: underline;
+
+
+}
