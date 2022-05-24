@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- Navbar -->
+<!-- <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="about.html">About</a></li>
+  <li class="smooth-random-nav"><a href="smoothRandom.html">Move Towards Random Smooth</a></li>
+  <div class="dropdown-content">
+  <a href="#">Link 1</a>
+</div>
+</ul> -->
+
+<div class="sidenav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="array-loop-counter.html">Array Loop Counter</a>
+  <button class="dropdown-btn">Dropdown
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <div class="dropdown-container">
+    <a href="smoothRandom.html">Move Towards Random Smooth</a>
+    <a href="smoothRandom_2.html">Move Towards Random Smooth 2</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  <a href="#contact">Search</a>
+</div>
+
+
+<script>
+// 2nd Navbar option
+
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+
+let dropdown = document.getElementsByClassName("dropdown-btn");
+let i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+</script>
