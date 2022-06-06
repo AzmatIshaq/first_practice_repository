@@ -30,6 +30,9 @@ let x = 1;
 let y = 1;
 let easing = 0.01;
 
+let x1 = 800;
+let y1 = 500;
+
 // Variable to set starting state to `title`
 
 let state = `animation`;
@@ -37,10 +40,13 @@ let state = `animation`;
 let randX = 10;
 let randY = 10;
 
-let circleArray = [];
+let randX1 = 10;
+let randY1 = 10;
 
-let randArrayX = [];
-let randArrayY = [];
+// let circleArray = [];
+//
+// let randArrayX = [];
+// let randArrayY = [];
 
 // let randArray1 = [`G`, `A`];
 
@@ -69,16 +75,19 @@ function setup() {
 // Set a new random position at an interval
   setInterval(randomTest, 3000);
 
-// Set a new random position at an interval
-  // setInterval(randomTest2, 3000);
-
 
 
   for(let i = 0; i < 30; i++) {
-    randArray1[i];
+    randArray1[i] = random(0, width);
     console.log(randArray1[i]);
     // console.log(randArray[4]);
   }
+
+  // for(let i = 0; i < 30; i++) {
+  //   randArray1[i];
+  //   console.log(randArray1[i]);
+  //   // console.log(randArray[4]);
+  // }
 
 randomArray();
 
@@ -146,6 +155,17 @@ function animationState() {
   let dy = targetY - y;
   y += dy * easing;
 
+
+// Second ellipse
+
+  let targetX1 = randX1;
+  let dx1 = targetX1 - x1;
+  x1 += dx1 * easing;
+
+  let targetY1 = randY1;
+  let dy1 = targetY1 - y1;
+  y1 += dy1 * easing;
+
   //
   // push();
   // noStroke();
@@ -159,39 +179,38 @@ function animationState() {
 
  // circleArray[i];
 
-  for (let i = 0; i < 10; i++) {
-
-    // let targetX = randX;
-    // let dx = targetX - x;
-    // x += dx * easing;
-    //
-    // let targetY = randY;
-    // let dy = targetY - y;
-    // y += dy * easing;
 
     push();
     noStroke();
     ellipse(x, y, 66, 66);
     pop();
 
-
-
     push();
     noStroke();
-    ellipse(x + 10, y + 10, 66, 66);
+    ellipse(x1, y1, 66, 66);
     pop();
 
+// p5 animation with nested for loop
+  for (let y1 = 20; y1 <= 100 - 20; y1 += 10) {
+    for (let x1 = 20; x1 <= 100 - 20; x1 += 10) {
+      stroke(102);
+      fill(255);
+      ellipse(x1, y1, 4, 4);
+      // Draw a line to the center of the display
+      line(x1, y1, width / 2, height / 2);
+    }
   }
 
-  for (let i = 0; i < randArrayY.length; i++) {
 
-    push();
-    noStroke();
-    ellipse(x + 100 * randArrayX[i], x + 100 * randArrayY[i], 66, 66);
-    pop();
-
-
-  }
+  // for (let i = 0; i < randArrayY.length; i++) {
+  //
+  //   push();
+  //   noStroke();
+  //   ellipse(x + 100 * randArrayX[i], x + 100 * randArrayY[i], 66, 66);
+  //   pop();
+  //
+  //
+  // }
 }
 
 /*********************** TITLE STATE ******************************************/
@@ -210,8 +229,9 @@ function resetStates() {
 function randomTest() {
   randX = random(0, width);
   randY = random(0, height);
+  randX1 = random(0, width);
+  randY1 = random(0, height);
   console.log((randX + randY) / 2);
-
 }
 
 function randomArray() {
