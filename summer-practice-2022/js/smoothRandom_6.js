@@ -21,8 +21,8 @@ let y = [];
 let randX = [];
 let randY = [];
 
-let easing = 0.01;
-let randomInterval = 100;
+let easing = 0.06;
+let randomInterval = 3000;
 
 // Slider to affect easing
 let slider;
@@ -54,7 +54,7 @@ function setup() {
 
   // Create slider
 
-  slider = createSlider(-0.3, 0.6, 0.001, 0.001);
+  slider = createSlider(-0.001, 0.15, 0.019, 0.005);
   // Put slider within the canvas's parent html id block
   slider.parent(`#p5-canvas`);
 }
@@ -84,7 +84,7 @@ for (var i = 0; i < x.length; i++) {
 
     //   noStroke();
     // fill(255, 200);
-    ellipse(x[i], y[i], 10);
+    ellipse(x[i], y[i], 30);
     }
   }
     // Link easing effect with mouse movement
